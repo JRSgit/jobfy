@@ -1,5 +1,6 @@
 const sqlite = require('sqlite');
-const _dbConnection = sqlite.open('banco.sqlite', { Promise });
+const path = require('path');
+const _dbConnection = sqlite.open(path.resolve(__dirname,'../banco.sqlite'), { Promise });
 
 class DadosControll {
     // função que pega as vagas no banco de dabos
@@ -92,10 +93,16 @@ class DadosControll {
     }
     //==============================================================
     async deleteCateg(req, res) {
-        const _db = await _dbConnection;
-        const id = req.params.id;
-        await _db.run('delete from categorias where id = ' + id + '');
-        res.status(200).redirect('/admin/categorias');
+        try {
+            const _db = await _dbConnection;
+            const id = req.params.id;
+            await _db.run(`delete from categorias where id = ${id}`);
+            res.status(200).redirect('/admin/categorias');
+            
+        } catch (error) {
+            console.log(error);
+            
+        }
     }
 
 };
