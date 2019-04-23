@@ -1,0 +1,22 @@
+{
+  "name": "jobfy",
+  "version": "1.0.0",
+  "description": "App for web site the Job",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "jobfy",
+    "job"
+  ],
+  "author": "JRSProg",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "sqlite": "^3.0.3",
+    "sqlite3": "^4.0.6"
+  }
+}

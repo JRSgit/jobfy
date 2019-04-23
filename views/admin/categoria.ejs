@@ -1,0 +1,22 @@
+
+<%- include('../header') %>
+<style>
+    li{
+        padding: 5px;
+        margin: 4px;
+    }
+</style>
+<h2>Administrar Categorias:
+    <a href="/admin/categoria/nova">Nova Categoria</a>
+</h2>
+<div class="vagas">
+    <ul>
+        <% categoria.forEach(categ => { %>
+        <li>
+            <%- categ.categoria %> |
+            <a href="/admin/categoria/delete/<%- categ.id %>">Excluir</a>
+        </li>
+        <% }) %>
+    </ul>
+</div>
+<%- include('../footer') %>

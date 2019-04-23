@@ -1,0 +1,21 @@
+<%- include('../header') %>
+<style>
+    div{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+</style>
+<h2> Add Categorias | 
+    <a href="/admin/categorias/"> Ver Categorias</a>
+</h2>
+<div>
+    <form method="POST">
+        <label>Categoria:</label>
+        <input type="text" name="categoria">
+        <br>
+        <button>Salvar categoria</button>
+    </form>
+</div>
+<%- include('../footer') %>

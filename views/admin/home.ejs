@@ -1,0 +1,33 @@
+<%- include('../header') %>
+<style>
+    div{
+        text-align: center;
+    }
+   div li{
+        margin-bottom: 10px;
+        list-style: none;
+        text-decoration: none;
+    }
+    a:hover{
+        background: #999;
+        color: blue;
+        
+    }
+   div a{
+        text-decoration: none;
+        font-size: 24px;
+        padding: 4px;
+        border-radius: 5px;
+        transition: 0.8s;
+        color: #000;
+    }
+
+</style>
+<h2>Administrar:</h2>
+<div>
+    <ul>
+        <li><a href="/admin/categorias">Gerenciar Categorias</a></li>
+        <li><a href="/admin/vagas">Gerenciar Vagas</a></li>
+    </ul>
+</div>
+<%- include('../footer') %>

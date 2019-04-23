@@ -1,0 +1,43 @@
+<%- include('../header') %>
+<style>
+    div{
+        display: flex;
+        justify-content: center;
+        /* align-items: center; */
+    }
+    h2{
+        display: flex;
+        justify-content: space-between;
+        padding-left: 30px;
+    }
+    a{
+        padding: 5px 30px 5px 30px;
+        border-radius: 7px;
+        transition: .7s;
+    }
+    a:hover{
+        background: #d6d3d3;
+    }
+</style> 
+<h2>Edita as Vagas 
+    <a href="/admin/vagas">Vagas</a>
+</h2>
+<div>
+    <form method="POST">
+        <label>Título:</label>
+        <input type="text" name="titulo" value="<%= vaga.titulo %>">
+        <br>
+        <label>Descrição:</label>
+        <textarea name="descricao"><%= vaga.descricao %></textarea>
+        <br>
+        <label>Categoria: <select name="categoria">
+            <% categoria.forEach( categ => { %>
+                <option value="<%= categ.id %>" <% if(categ.id == vaga.categoria) { %>selected<% } %>  ><%= categ.categoria %></option> 
+            <% }) %>
+            </select>
+        </label>
+        <br>
+        <button>Salvar vagas</button>
+    </form>
+</div>
+<%- include('../footer') %>
